@@ -18,7 +18,7 @@ describe 'MyNumber instance', ->
       num(-15).isInteger().should.equal true
 
     it 'returns false for anything else', ->
-      num(3/2).isInteger().should.equal false
+      num(-3/2).isInteger().should.equal false
       num(3.141592).isInteger().should.equal false
 
   describe 'isTriangular', ->
