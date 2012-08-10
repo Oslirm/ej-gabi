@@ -6,11 +6,7 @@ class MyNumber
   isTriangular: ->
     return false unless @isInteger()
     n = Math.abs @value
-    i = 0
-    m = 0
-    while m < n
-      m += i
-      i++
-    m is n
+    m = -1/2 + Math.sqrt(1/4 + 2 * n)
+    new MyNumber(m).isInteger()
 
 exports.MyNumber = MyNumber
