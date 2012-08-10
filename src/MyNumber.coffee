@@ -17,11 +17,8 @@ class MyNumber
     m is 2 *  @value
 
   divisors: ->
-    d = 1
-    div = []
-    while d <= @value/2
-      div.push d if @value % d is 0
-      d++
+    return [@value] if @value < 2
+    div = (d for d in [1..@value/2] when @value % d is 0)
     div.push @value
     div
 
