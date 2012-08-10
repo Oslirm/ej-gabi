@@ -18,4 +18,13 @@ class MyNumber
       d++
     m is @value
 
+  divisors: ->
+    d = 1
+    div = []
+    while d <= @value/2
+      div.push d if @value % d is 0
+      d++
+    div.push @value
+    div
+
 exports.MyNumber = MyNumber
