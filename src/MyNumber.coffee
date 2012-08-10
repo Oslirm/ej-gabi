@@ -11,12 +11,10 @@ class MyNumber
 
   isPerfect: ->
     return false unless @isInteger()
-    d = 1
     m = 0
-    while d <= @value/2
-      m += d if @value % d is 0
-      d++
-    m is @value
+    for d in @divisors()
+      m += d
+    m is 2 *  @value
 
   divisors: ->
     d = 1
